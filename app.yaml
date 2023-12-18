@@ -1,0 +1,4 @@
+---
+kind: wasmer.io/App.v0
+name: wasmer-edge-nuxt-ssg-sample
+package: wasmer-tests/wasmer-edge-nuxt-sample

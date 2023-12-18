@@ -1,0 +1,10 @@
+[package]
+name = "wasmer-tests/wasmer-edge-nuxt-sample"
+version = "0.1.1"
+description = "wasmer-tests/wasmer-edge-nuxt-sample website"
+
+[dependencies]
+"wasmer/static-web-server" = "*"
+
+[fs]
+public = ".output/public"
