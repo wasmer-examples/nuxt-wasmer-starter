@@ -1,26 +1,9 @@
-# Nuxt 3 Minimal Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a [Nuxt 3](https://nuxt.com) starter project.
 
-## Setup
+> Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
+## Usage
 
 Start the development server on `http://localhost:3000`:
 
@@ -38,38 +21,19 @@ yarn dev
 bun run dev
 ```
 
-## Production
 
-Build the application for production:
+## Deploy on Wasmer Edge
 
-```bash
-# npm
-npm run build
+The easiest way to deploy your Nuxt app is to use the [Wasmer Edge](https://wasmer.io/products/edge).
 
-# pnpm
-pnpm run build
+Live example: http://wasmer-edge-nuxt-ssg-sample.wasmer.app/
 
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
+First, you'll need to run `npm run build`, and then, to deploy to Wasmer Edge:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+wasmer deploy
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+> [!NOTE]
+> You will need to have Wasmer installed (check out [the docs to install the Wasmer CLI](https://docs.wasmer.io/install)!). 
+> You will also need to change the namespace in `wasmer.toml` to your own namespace and app name in `app.yaml` to your own app name.
