@@ -1,7 +1,9 @@
 [package]
-name = "wasmer-tests/wasmer-edge-nuxt-sample"
-version = "0.1.1"
-description = "wasmer-tests/wasmer-edge-nuxt-sample website"
+name = "wasmer-examples/nuxt-wasmer-starter"
+version = "0.2.0"
+description = "Nuxt static website Wasmer starter package"
+readme = "README.md"
+repository = "https://github.com/wasmer-examples/nuxt-wasmer-starter"
 
 [dependencies]
 "wasmer/static-web-server" = "*"

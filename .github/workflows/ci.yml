@@ -45,9 +45,9 @@ jobs:
       - name: Install Nuxt's dependencies
         run: pnpm install
       - name: Build Nuxt
-        run: pnpm build
-      - name: Deploy app to wasmer.wtf
-        run: wasmer deploy --registry="https://registry.wasmer.wtf/graphql" --token=${{ secrets.WASMER_CIUSER_DEV_TOKEN }} --publish-package --non-interactive --no-wait --no-persist-id --owner wasmer-tests
-        continue-on-error: true
-      - name: Deploy app to wasmer.io
-        run: wasmer deploy --registry="https://registry.wasmer.io/graphql" --token=${{ secrets.WASMER_CIUSER_PROD_TOKEN }} --publish-package --non-interactive --no-wait --no-persist-id --owner wasmer-tests
+        run: pnpm run generate
+      # - name: Deploy app to wasmer.wtf
+      #   run: wasmer deploy --registry="https://registry.wasmer.wtf/graphql" --token=${{ secrets.WASMER_CIUSER_DEV_TOKEN }} --publish-package --non-interactive --no-wait --no-persist-id --owner wasmer-examples
+      #   continue-on-error: true
+      - name: Deploy app to Wasmer Edge
+        run: wasmer deploy --token=${{ secrets.WASMER_CIUSER_PROD_TOKEN }} --publish-package --non-interactive --no-wait --no-persist-id --owner wasmer-examples
