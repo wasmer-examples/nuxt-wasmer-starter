@@ -4,7 +4,7 @@ This is a [Nuxt 3](https://nuxt.com) starter project.
 > Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 > [!IMPORTANT]
-> Support for running Nuxt fully server-side with Wasmer using [WinterJS](https://github.com/wasmerio/winterjs) is on the works. Meanwhile you can serve the static website via `npm run generate`.
+> Support for running Nuxt fully server-side with Wasmer using [WinterJS](https://github.com/wasmerio/winterjs) is on the works. Meanwhile you can serve the static website via `npm run build`.
 
 ## Usage
 
@@ -33,7 +33,7 @@ wasmer run wasmer-examples/nuxt-wasmer-starter --net -- --port 3000
 ```
 
 > [!TIP]
-> You can also run `wasmer run . --net -- --port 3000` in the root of this repo, after running `npm run generate`
+> You can also run `wasmer run . --net -- --port 3000` in the root of this repo, after running `npm run build`
 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -45,7 +45,7 @@ The easiest way to deploy your Nuxt app is to use the [Wasmer Edge](https://wasm
 
 Live example: https://wasmer-edge-nuxt-ssg-sample.wasmer.app/
 
-First, you'll need to run `npm run generate`, and then, to deploy to Wasmer Edge:
+First, you'll need to run `npm run build`, and then, to deploy to Wasmer Edge:
 
 ```bash
 wasmer deploy
