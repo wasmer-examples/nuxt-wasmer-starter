@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   nitro: {
-    preset: 'lagon',
+    prerender: {
+      autoSubfolderIndex: false
+    }
   },
-  ssr: false,
 });

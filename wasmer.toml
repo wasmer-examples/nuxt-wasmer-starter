@@ -6,7 +6,15 @@ readme = "README.md"
 repository = "https://github.com/wasmer-examples/nuxt-wasmer-starter"
 
 [dependencies]
-"wasmer/static-web-server" = "*"
+"wasmer/winterjs" = "^1.0"
 
 [fs]
-public = ".output/public"
+"/web" = "dist"
+
+[[command]]
+name = "script"
+module = "wasmer/winterjs:winterjs"
+runner = "wasi"
+
+[command.annotations.wasi]
+main-args = ["--mode", "cloudflare", "/web"]
