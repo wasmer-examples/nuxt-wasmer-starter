@@ -29,12 +29,9 @@ You can also run the Nuxt template easily using Wasmer (check out the [install g
 
 
 ```bash
-wasmer run wasmer-examples/nuxt-wasmer-starter --net -- --port 3000
+npm run generate
+wasmer run . --net -- --port 3000
 ```
-
-> [!TIP]
-> You can also run `wasmer run . --net -- --port 3000` in the root of this repo, after running `npm run generate`
-
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -43,14 +40,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 The easiest way to deploy your Nuxt app is to use the [Wasmer Edge](https://wasmer.io/products/edge).
 
-Live example: https://wasmer-edge-nuxt-ssg-sample.wasmer.app/
+Live example: https://nuxt-starter-wasmer-examples.wasmer.app/
 
 First, you'll need to run `npm run generate`, and then, to deploy to Wasmer Edge:
 
 ```bash
 wasmer deploy
 ```
-
-> [!NOTE]
-> You will need to have Wasmer installed (check out [the docs to install the Wasmer CLI](https://docs.wasmer.io/install)!). 
-> You will also need to change the namespace in `wasmer.toml` to your own namespace and app name in `app.yaml` to your own app name.
