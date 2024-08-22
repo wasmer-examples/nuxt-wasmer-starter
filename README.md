@@ -30,7 +30,7 @@ You can also run the Nuxt template easily using Wasmer (check out the [install g
 
 ```bash
 npm run generate
-wasmer run . --net -- --port 3000
+wasmer run . -- --port 3000
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
