@@ -1,49 +1,39 @@
+# Nuxt 3 Static Site + Wasmer
 
-This is a [Nuxt 3](https://nuxt.com) starter project.
+This example shows how to statically generate a **Nuxt 3** app and host it on **Wasmer Edge**.
 
-> Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+> Nuxt’s full server-side rendering story for Wasmer (via WinterJS) is in progress. For now, this template targets **`npm run generate`** so you can deploy a pre-rendered site.
 
-> [!IMPORTANT]
-> Support for running Nuxt fully server-side with Wasmer using [WinterJS](https://github.com/wasmerio/winterjs) is on the works. Meanwhile you can serve the static website via `npm run generate`.
+## Demo
 
-## Usage
+https://nuxt-starter-wasmer-examples.wasmer.app/
 
-Start the development server on `http://localhost:3000`:
+## How it Works
+
+Key pieces of the starter:
+
+* `app.vue` and components under `components/` render the UI.
+* `nuxt.config.ts` uses the default static target; when you run `npm run generate` the site is output to `.output/public`.
+* The static folder is served directly by Wasmer Edge, so no serverless functions are required.
+
+Add pages under `pages/` or use content modules as usual—just make sure everything can be generated ahead of time.
+
+## Running Locally
 
 ```bash
-# npm
+npm install
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-
-You can also run the Nuxt template easily using Wasmer (check out the [install guide](https://docs.wasmer.io/install)):
-
+Visit `http://127.0.0.1:3000/` for the dev server. To preview the generated output Wasmer will get:
 
 ```bash
 npm run generate
-wasmer run . -- --port 3000
+npm run preview
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploying to Wasmer (Overview)
 
-
-## Deploy on Wasmer Edge
-
-The easiest way to deploy your Nuxt app is to use the [Wasmer Edge](https://wasmer.io/products/edge).
-
-Live example: https://nuxt-starter-wasmer-examples.wasmer.app/
-
-First, you'll need to run `npm run generate`, and then, to deploy to Wasmer Edge:
-
-```bash
-wasmer deploy
-```
+1. Run `npm run generate` to emit the static site into `.output/public`.
+2. Configure Wasmer Edge to publish `.output/public` (or copy it to a `dist/` directory).
+3. Deploy and browse `https://<your-subdomain>.wasmer.app/`.
